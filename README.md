@@ -11,3 +11,5 @@ or
 This always works
 <React.Fragment>
 </React.Fragment>
+
+here I used `useRef();` to store my inputs instead of `useState();`

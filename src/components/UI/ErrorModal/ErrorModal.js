@@ -25,8 +25,6 @@ const ModalOverlay = props => {
 }
 
 
-
-
 const ErrorModal = (props) => {
     return (
         <React.Fragment>
