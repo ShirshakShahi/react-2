@@ -27,10 +27,10 @@ const App = () => {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <AddForm onAddDatas={onSaveData} />
       <ShowInfo items={data} />
-    </div>
+    </React.Fragment>
   );
 }
 

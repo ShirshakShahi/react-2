@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './AddForm.module.css';
 import Card from '../UI/Card/Card';
+import Wrapper from '../Helpers/Wrapper';
 import Button from '../UI/Button/Button';
 import ErrorModal from '../UI/ErrorModal/ErrorModal';
 
@@ -55,7 +56,7 @@ const AddForm = (props) => {
         setError(null);
     };
     return (
-        <div>
+        <Wrapper>
             {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler} />}
             <Card className="">
                 <form onSubmit={onSubmitHandler}>
@@ -70,7 +71,7 @@ const AddForm = (props) => {
                     <Button type="submit">Add Age</Button>
                 </form>
             </Card>
-        </div>
+        </Wrapper>
     );
 }
 
