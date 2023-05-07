@@ -30,6 +30,7 @@ const AddForm = (props) => {
                 title: "Invalid Input",
                 message: "Please Enter a valid name and age (non-empty values)."
             })
+            return;
         }
         if (+age < 1) {
             setError({

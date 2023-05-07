@@ -1,7 +1,6 @@
-Working with Fragments, Portals and refs.
+Working with Fragments, Portals and refs for writing cleaner code.
 
-solution to "<div> Soup" problem.
-
+solution to `<div> Soup` problem.
 
 This works according to our project
 <>
