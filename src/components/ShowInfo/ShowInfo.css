@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid red;
+    border: none;
+    border-radius: 15px;
+    height: 50px;
+    font-family: 'Varela', sans-serif;
+    background-color: #2b124c;
+    color: green;
+    margin-top: 25px;
+}
+
+.no-info {
+    color: red;
+}
