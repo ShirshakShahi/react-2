@@ -1,35 +1,42 @@
-import React, { useState } from 'react';
-import AddForm from './components/AddForm/AddForm';
-import ShowInfo from './components/ShowInfo/ShowInfo';
+import React, { useState, useEffect } from 'react';
 
-// const dummyDetails = [
-//   {
-//     id: "e1",
-//     name: "shirshak",
-//     age: 21
-//   },
-//   {
-//     id: "e2",
-//     name: "Bijaya",
-//     age: 20
-//   }
-// ]
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import MainHeader from './components/MainHeader/MainHeader';
 
 const App = () => {
 
-  const [data, setData] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const onSaveData = (datas) => {
-    setData(prevDatas => {
-      // return [...prevDatas, { name: userName, age: userAge, id: Math.random().toString() }];
-      return [...prevDatas, { ...datas, id: Math.random().toString() }];
-    })
-  }
+  useEffect(() => {
+    const storedUserLoggedInformation = localStorage.getItem('isLoggedIn');
+
+    if (storedUserLoggedInformation === '1') {
+      setIsLoggedIn(true);
+    }
+  }, [])
+
+
+
+  const loginHandler = (email, password) => {
+    // We should of course check email and password
+    // But it's just a dummy/ demo anyways
+    localStorage.setItem('isLoggedIn', '1');
+    setIsLoggedIn(true);
+  };
+
+  const logoutHandler = () => {
+    localStorage.removeItem('isLoggedIn');
+    setIsLoggedIn(false);
+  };
 
   return (
     <React.Fragment>
-      <AddForm onAddDatas={onSaveData} />
-      <ShowInfo items={data} />
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <main>
+        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {isLoggedIn && <Home onLogout={logoutHandler} />}
+      </main>
     </React.Fragment>
   );
 }
