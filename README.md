@@ -43,6 +43,10 @@ context API like example here:
     </AuthContext.Consumer>
 
 
-alternative way is to use built-hook i.e`useContext()`
+`note that : we use Context only if the prop is forwarded, if it is directly passed then we simply pass the value as props  and  use Context when we have to pass props to alot of Components and that part does the same work always like inside homepage the logout button always logs the user out so.`
+
+alternative way is to use built-hook i.e `useContext()`
 
 const variable = useContext(ContextName);
+
+
