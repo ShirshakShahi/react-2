@@ -12,6 +12,8 @@ useEffect runs when there is change in its dependencies, if no dependencies are 
 
 `useReducer()`
 
+syntax:
+
 const[state,dispatchFn] = useReducer(reducerFn,initial value)
 
 const dispatchFn=(state,value)=>{
